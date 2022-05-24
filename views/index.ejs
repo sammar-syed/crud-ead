@@ -1,0 +1,90 @@
+<%- include('./partials/header.ejs') %>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 mt-5">
+                <h2 class="alert alert-success text-center">Add Student</h2>
+                <!-- Form -->
+                <form method="post" action="/student">
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Name</label>
+                        <input type="text" class="form-control"
+                            id="text"
+                            aria-describedby="text" name="name">
+                        <div id="text" class="form-text">We'll never share
+                            your info with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Age</label>
+                        <input type="text" class="form-control"
+                            id="exampleInputPassword1" name="age">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Fees</label>
+                        <input type="text" class="form-control"
+                            id="exampleInputPassword1" name="fees">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-sm-6 mt-5">
+                <h2 class="alert alert-danger text-center">List of Student</h2>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">No</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Fees</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% var i=1 %>
+                            <% data.forEach((item)=>{%>
+                                <tr>
+                                    <th scope="row"><%=i++ %> </th>
+                                        <td><%=item.name %> </td>
+                                            <td><%=item.age %></td>
+                                                <td><%=item.fees %></td>
+                                                    <td>
+                                                        <form
+                                                            action="/student/edit/<%=item._id
+                                                            %> " method="get"
+                                                            class="d-inline">
+                                                            <button
+                                                                type="submit"
+                                                                class="btn">
+                                                                <i class="fas
+                                                                    fa-pen-square
+                                                                    text-info"></i>
+                                                            </button>
+                                                        </form>
+
+                                                        <form
+                                                            action="/student/delete/<%=item._id
+                                                            %> " method="post"
+                                                            class="d-inline">
+                                                            <button
+                                                                type="submit"
+                                                                class="btn">
+                                                                <i class="fas
+                                                                    fa-trash
+                                                                    text-danger"></i>
+                                                            </button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                <% }) %>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-8"></div>
+                                        </div>
+
+
+                                        <%- include('./partials/footer.ejs') %>

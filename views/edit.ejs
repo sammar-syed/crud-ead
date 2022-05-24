@@ -1,0 +1,41 @@
+<%- include('./partials/header.ejs') %>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 mt-5">
+                <h2 class="alert alert-success text-center">Update Students</h2>
+                <!-- Form -->
+                <form method="post" action="/student/update/<%=data._id %> ">
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Name</label>
+                        <input type="text" class="form-control"
+                            id="text"
+                            aria-describedby="text" name="name" value="<%=data.name
+                            %> ">
+                        <div id="text" class="form-text">We'll never share
+                            your info with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Age</label>
+                        <input type="text" class="form-control"
+                            id="text" age="age" value="<%=data.age
+                            %> ">
+                    </div>
+                    <div class="mb-3">
+                        <label for="text" class="form-label">Fees</label>
+                        <input type="text" class="form-control"
+                            id="text" fees="fees" value="<%=data.fees
+                            %> ">
+                    </div>
+                    <button type="submit" class="btn btn-warning">Update</button>
+                    <button type="submit" class="btn btn-secondary">Back to Home</button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <%- include('./partials/footer.ejs') %>
