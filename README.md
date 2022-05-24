@@ -20,7 +20,9 @@ run below command in your project folder using cmd or terminal. This command is 
 **__npm install_
 _**
 
+
 run below command for running the server
 _
 **npm start**_
+
 Open your browser and go to http://localhost:3003/student
