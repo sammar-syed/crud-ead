@@ -23,6 +23,6 @@ _**
 
 run below command for running the server
 _
-**npm start**_
+**npm run dev**_
 
 Open your browser and go to http://localhost:3003/student
