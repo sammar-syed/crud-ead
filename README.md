@@ -1,6 +1,6 @@
 # crud-ead
 
-Simple web for personal portfolio using node.js, express, MySQL
+CRUD Operations including Create, Read, Update, and Delete using Node js, Express Js, Ejs, and MongoDB
 
 **Getting Started**
 
